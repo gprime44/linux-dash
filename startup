@@ -1,0 +1,7 @@
+#!/bin/sh
+
+addgroup -g ${GID} dash && adduser -h /usr/src/app -D -G dash -s /bin/sh -u ${UID} dash
+
+chown -R dash:dash /usr/src/app
+
+su - dash -c "cd /usr/src/app/; npm start"
